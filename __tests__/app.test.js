@@ -17,5 +17,19 @@ describe('createResponse', () => {
         expect(res.request._data).toEqual('Hello!');
       });
   });
+  it('handles a get request for path "/red" by sending <h1>RED</h1> to client side', () => {
+    return request(app)
+      .get('/red')
+      .then(res => {
+        expect(res.text).toEqual('<h1>RED</h1>');
+      });
+  });
+  it('handles a get request for path "/green" by sending <h1>RED</h1> to client side', () => {
+    return request(app)
+      .get('/red')
+      .then(res => {
+        expect(res.text).toEqual('<h1>RED</h1>');
+      });
+  });
 });
 
