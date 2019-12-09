@@ -24,11 +24,11 @@ describe('createResponse', () => {
         expect(res.text).toEqual('<h1>RED</h1>');
       });
   });
-  it('handles a get request for path "/green" by sending <h1>RED</h1> to client side', () => {
+  it('handles a get request for path "/green" by sending <h1>GREEN</h1> to client side', () => {
     return request(app)
-      .get('/red')
+      .get('/green')
       .then(res => {
-        expect(res.text).toEqual('<h1>RED</h1>');
+        expect(res.text).toEqual('<h1>GREEN</h1>');
       });
   });
 });
