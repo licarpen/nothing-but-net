@@ -9,5 +9,13 @@ describe('createResponse', () => {
         expect(res.text).toEqual('Hi');
       });
   });
+  it('handles a POST request for path "/echo" by sending status 200 and plain text with request body', () => {
+    return request(app)
+      .post('/echo')
+      .send('Hello!')
+      .then(res => {
+        expect(res.request._data).toEqual('Hello!');
+      });
+  });
 });
 
