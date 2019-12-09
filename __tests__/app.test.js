@@ -31,5 +31,12 @@ describe('createResponse', () => {
         expect(res.text).toEqual('<h1>GREEN</h1>');
       });
   });
+  it('handles a get request for path "/periwinkle" by sending <h1>PERIWINKLE</h1> to client side', () => {
+    return request(app)
+      .get('/periwinkle')
+      .then(res => {
+        expect(res.text).toEqual('<h1>PERIWINKLE</h1>');
+      });
+  });
 });
 
